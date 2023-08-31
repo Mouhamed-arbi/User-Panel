@@ -7,25 +7,40 @@ import { GiftContext } from './Context';
 const OneProduct = (props) => {
   const [isGift, setIsGift] = useContext(GiftContext);
   const findProductInCart = (productId) => {
-    return isGift.myPannel.find(item => item.id === productId);
+    if(isGift.myPannel.length>0){
+      return isGift.myPannel.find(item => item.id === productId);
+    }
   }
   
   const addToMyPannel = (obj) => {
-    const productInCart = findProductInCart(obj.id);
-
+    var productInCart = findProductInCart(obj.id);
+    console.log(productInCart,"this is exist ")
     if (isGift.balance >= obj.price) {
-      if (productInCart && props.product.qty>0) {
+      if ( props.product.qty>0) {
         props.product.qty = props.product.qty - 1;
+
       }
-      else if (props.product.qty==0){alert('No product');}
+      else if (props.product.qty===0){alert('No product');}
       const updatedWalletBalance = isGift.balance - obj.price;
-     
-      const updatedProduct = { ...obj, qty: 1 };
-      setIsGift({
-        ...isGift,
-        myPannel: [...isGift.myPannel, updatedProduct],
-        balance: updatedWalletBalance,
-      });
+      const updatedPannel=isGift.myPannel.filter(e=>{
+        return productInCart && productInCart.id !== e.id
+      })
+      if(productInCart){
+        productInCart={...productInCart ,qty:productInCart.qty+1}
+        setIsGift({
+          ...isGift,
+          myPannel: [...updatedPannel, productInCart],
+          balance: updatedWalletBalance,
+        });
+      }else{
+        setIsGift({
+          ...isGift,
+          myPannel: [...isGift.myPannel, obj],
+          balance: updatedWalletBalance,
+        })
+      }
+      
+      
     } else {
       alert('Insufficient balance');
     }
@@ -52,9 +67,11 @@ const OneProduct = (props) => {
         <span className="text-title">{props?.product?.price} dt</span>
         <span>quantity: {props?.product?.qty}</span>
       </div>
-      <p className="btn" onClick={() => addToMyPannel(props?.product)}>
+      <button className="btn" onClick={() =>{
+         addToMyPannel(props?.product)
+         props.setCount(props.count+1)}}>
         add to panel
-      </p>
+      </button>
     </div>
   );
 };

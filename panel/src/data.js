@@ -7,7 +7,7 @@ import productImg05 from "././images/hoodie02.png";
 import productImg06 from "././images/hoodie06.png";
 const data=[
     {
-        "id":"",
+        "id":1,
         "image":productImg01,
         "title":"CitySwag Streetwear", 
         "reference":"",
@@ -18,7 +18,7 @@ const data=[
         "gift_price":""
     },
     {
-        "id":"",
+        "id":2,
         "image":productImg02,
         "title":"StreetVibe Hoodie",
         "reference":"",
@@ -29,7 +29,7 @@ const data=[
         "gift_price":""
     },
     {
-        "id":"",
+        "id":3,
         "image":productImg03,
         "title":"FreshFit Hoodie",
         "reference":"",
@@ -40,7 +40,7 @@ const data=[
         "gift_price":""
     },
     {
-        "id":"",
+        "id":4,
         "image":productImg04,
         "title":"MetroThreads Streetwear",
         "reference":"",
@@ -51,7 +51,7 @@ const data=[
         "gift_price":""
     },
     {
-        "id":"",
+        "id":5,
         "image":productImg05,
         "title":"EliteUrban Hoodie",
         "reference":"",
@@ -62,7 +62,7 @@ const data=[
         "gift_price":""
     },
     {
-        "id":"",
+        "id":6,
         "image":productImg06,
         "title":"StyleMaven Hoodie",
         "reference":"",
