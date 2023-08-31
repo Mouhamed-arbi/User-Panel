@@ -4,7 +4,7 @@ import React, { useState, createContext } from "react";
 const GiftContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [isGift, setIsGift] = useState({isGift:"",myPannel:[]});
+  const [isGift, setIsGift] = useState({isGift:"",myPannel:[],balance:100});
 
   return (
     <GiftContext.Provider value={[isGift, setIsGift]}>

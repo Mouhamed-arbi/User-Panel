@@ -4,7 +4,7 @@ import { GiftContext } from './Context';
 
 const OneProduct = (props) => {
   const [isGift, setIsGift] = useContext(GiftContext);
-
+ 
   return (
     <div className="card">
       {props.product.map((product, i) => (
