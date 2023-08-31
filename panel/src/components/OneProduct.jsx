@@ -2,11 +2,24 @@ import React, { useContext } from 'react';
 import '../styles/oneProduct.css';
 import { GiftContext } from './Context';
 
+
+
 const OneProduct = (props) => {
   const [isGift, setIsGift] = useContext(GiftContext);
+  const findProductInCart = (productId) => {
+    return isGift.myPannel.find(item => item.id === productId);
+  }
+  
   const addToMyPannel = (obj) => {
+    const productInCart = findProductInCart(obj.id);
+
     if (isGift.balance >= obj.price) {
+      if (productInCart && props.product.qty>0) {
+        props.product.qty = props.product.qty - 1;
+      }
+      else if (props.product.qty==0){alert('No product');}
       const updatedWalletBalance = isGift.balance - obj.price;
+     
       const updatedProduct = { ...obj, qty: 1 };
       setIsGift({
         ...isGift,
@@ -17,6 +30,8 @@ const OneProduct = (props) => {
       alert('Insufficient balance');
     }
   };
+
+  
 
   return (
     <div className="card">
