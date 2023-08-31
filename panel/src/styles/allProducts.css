@@ -1,0 +1,7 @@
+.all-products{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap ;
+    gap: 40px;
+    padding: 20px;
+}
