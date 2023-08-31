@@ -16,7 +16,8 @@ const OneProduct = (props) => {
             <p className="text-title" style={{ textAlign: 'center' }}>
               {props.product.title}
             </p>
-            <p className="text-body"> I buy {props.product.i}  Hoodies</p>
+            <p className="text-body"> I buy  <strong>{props.product.qty} </strong>               {props.product.title}
+</p>
           </div>
         </div>
      

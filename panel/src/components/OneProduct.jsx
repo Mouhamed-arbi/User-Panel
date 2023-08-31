@@ -36,7 +36,7 @@ const OneProduct = (props) => {
       }else{
         setIsGift({
           ...isGift,
-          myPannel: [...isGift.myPannel, obj],
+          myPannel: [...isGift.myPannel, {...obj,qty:1}],
           balance: updatedWalletBalance,
         })
       }
