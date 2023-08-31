@@ -4,10 +4,10 @@ import { GiftContext } from './Context';
 
 const OneProduct = (props) => {
   const [isGift, setIsGift] = useContext(GiftContext);
- 
+ console.log('array',props.product)
   return (
     <div className="card">
-      {props.product.map((product, i) => (
+      {props.myPannel.map((product, i) => (
         <div key={i} className="product-card">
           <div className="card-img">
             <img src={product.image} alt={product.label} style={{ alignItems: 'center' }} />
