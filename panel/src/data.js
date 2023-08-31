@@ -1,4 +1,4 @@
-import productImg01 from "././images/hoodie05.png";
+import productImg01 from "././images/hoodie06.png";
 import productImg02 from "././images/hoodie06.png";
 import productImg03 from "././images/hoodie07.png";
 
@@ -9,7 +9,7 @@ const data=[
     {
         "id":"",
         "image":productImg01,
-        "title":"CitySwag Streetwear",
+        "title":"CitySwag Streetwear", 
         "reference":"",
         "label":"",
         "qty":"5",
