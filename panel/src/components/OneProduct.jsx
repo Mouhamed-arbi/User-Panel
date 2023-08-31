@@ -8,6 +8,8 @@ const OneProduct = (props) => {
     // let x=isGift.myPannel.push(obj);
     setIsGift({...isGift,myPannel:[...isGift.myPannel,obj]})
   }
+
+
   return (
     <div className="card">
         <div className="card-img"><img src={props?.product?.image} alt={props?.product?.label}  style={{alignItems:"center"}} /></div>

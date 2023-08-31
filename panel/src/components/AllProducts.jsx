@@ -33,6 +33,10 @@ useEffect(()=>{
         </div>
         
     </>
+
+// {products && products.map((product,i)=>{
+//     return (<OneProduct key={i} product={product}/>)
+//     })}
   )
 }
 

@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllProducts from "./components/AllProducts";
 import {ContextProvider} from "./components/Context";
+import WalletBalance from './components/Wallet'
 
 function App() {
   const [myPannel,setMyPannel]=useState([]);
@@ -16,7 +17,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/products' element={<AllProducts myPannel={myPannel} setMyPannel={setMyPannel}/>}/>
-        {/* <Route path="/pannel" element={}/> */}
+        <Route path="/pannel" element={ <WalletBalance myPannel={myPannel} setMyPannel={setMyPannel}/>}/>
       </Routes>
     </BrowserRouter>
 </ContextProvider>
