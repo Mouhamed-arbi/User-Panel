@@ -4,22 +4,22 @@ import { GiftContext } from './Context';
 
 const OneProduct = (props) => {
   const [isGift, setIsGift] = useContext(GiftContext);
- console.log('array',props.product)
+ console.log('array',props.product.i)
   return (
     <div className="card">
-      {props.myPannel.map((product, i) => (
-        <div key={i} className="product-card">
+      
+        <div  className="product-card">
           <div className="card-img">
-            <img src={product.image} alt={product.label} style={{ alignItems: 'center' }} />
+            <img src={props.product.image} alt={props.product.label} style={{ alignItems: 'center' }} />
           </div>
           <div className="card-info">
             <p className="text-title" style={{ textAlign: 'center' }}>
-              {product.title}
+              {props.product.title}
             </p>
-            <p className="text-body">{product.description}</p>
+            <p className="text-body"> I buy {props.product.i}  Hoodies</p>
           </div>
         </div>
-      ))}
+     
     </div>
   );
 };

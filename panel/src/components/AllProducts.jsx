@@ -9,7 +9,7 @@ import { GiftContext } from './Context';
 const AllProducts = () => {
     const [isGift,setIsGift]=useContext(GiftContext)
     const [products,setProducts]=useState(data)
-    
+    const [count,setCount]=useState(0)
 useEffect(()=>{
     (()=>{
         if(isGift.isGift==="gift"){
@@ -22,13 +22,13 @@ useEffect(()=>{
             setProducts(data)
         }
     })();
-},[isGift.isGift])
+},[isGift.isGift,count])
   return (
     <>
         <NavbarComponent/>
         <div className='all-products'>
             {products && products.map((product,i)=>{
-            return (<OneProduct key={i} product={product}/>)
+            return (<OneProduct key={i} product={product} count={count} setCount={setCount}/>)
             })}
         </div>
         
