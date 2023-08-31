@@ -19,7 +19,7 @@ function WalletBalance() {
     </div>
     <div className='all-products'>
         {isGift.myPannel && isGift.myPannel.map((product,i)=>{
-        return (<ProductBuy key={i} product={isGift.myPannel}/>)
+        return (<ProductBuy key={i} product={product}/>)
         })}
     </div>
     

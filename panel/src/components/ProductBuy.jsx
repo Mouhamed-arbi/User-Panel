@@ -7,19 +7,19 @@ const OneProduct = (props) => {
  
   return (
     <div className="card">
-      {props.product.map((product, i) => (
-        <div key={i} className="product-card">
+      
+        <div  className="product-card">
           <div className="card-img">
-            <img src={product.image} alt={product.label} style={{ alignItems: 'center' }} />
+            <img src={props.product.image} alt={props.product.label} style={{ alignItems: 'center' }} />
           </div>
           <div className="card-info">
             <p className="text-title" style={{ textAlign: 'center' }}>
-              {product.title}
+              {props.product.title}
             </p>
-            <p className="text-body">{product.description}</p>
+            <p className="text-body">{props.product.description}</p>
           </div>
         </div>
-      ))}
+     
     </div>
   );
 };
